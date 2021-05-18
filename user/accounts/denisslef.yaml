@@ -1,0 +1,11 @@
+state: enabled
+email: denisslef@gmail.com
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+fullname: 'Denis Lefèvre'
+title: Administrator
+hashed_password: $2y$10$LzkrAIbfG3PVpWSFCJHUUu1DAKPDonanWho7dsFRzYTlJZ9Jn5jri

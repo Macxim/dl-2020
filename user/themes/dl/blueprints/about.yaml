@@ -1,0 +1,34 @@
+title: About
+'@extends':
+  type: default
+  context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          fields:
+
+            header.media_order:
+              unset@: true
+
+            header.bonus:
+              label: Bonus
+              type: text
+
+            header.myresume_label:
+              label: My resume (label)
+              type: text
+            
+            header.myresume_file:
+              label: My resume (.pdf)
+              type: file
+              destination: 'self@'
+              multiple: false
+              limit: 1
+              accept:
+                - '.pdf'

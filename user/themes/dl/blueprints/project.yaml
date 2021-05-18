@@ -1,0 +1,54 @@
+title: Project
+'@extends':
+  type: default
+  context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          fields:
+
+            header.media_order:
+              unset@: true
+
+            header.project_url:
+              type: text
+              label: Project URL
+
+            header.media_desktop:
+              label: Media Desktop
+              type: file
+              multiple: true
+              destination: 'self@'
+              random_name: false
+              avoid_overwriting: false
+              limit: 0
+              accept:
+                - image/*
+
+            header.media_mobile:
+              label: Media Mobile
+              type: file
+              multiple: true
+              destination: 'self@'
+              random_name: false
+              avoid_overwriting: false
+              limit: 0
+              accept:
+                - image/*
+
+            header.project_dark_image:
+              type: toggle
+              label: Has dark image?
+              highlight: 0
+              default: 0
+              options:
+                  1: 'Yes'
+                  0: 'No'
+              validate:
+                  type: bool

@@ -1,0 +1,11 @@
+state: enabled
+email: me@macx.im
+fullname: 'Maxime Laforet'
+title: Administrator
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+hashed_password: $2y$10$Ew9Of.5RmRSJkyl/8ngjX.WCQuxPiZhOX6B3.a/dYP5c/q/h.fPna

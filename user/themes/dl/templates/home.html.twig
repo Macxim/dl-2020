@@ -1,0 +1,17 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+  <div class="projects-wrapper">
+    <ul class="projects-list">
+      {% for p in page.find('/projects').children if p != page %}
+        <li><a class="project" href="{{p.url}}">{{ p.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+
+{% endblock %}
+
+
+
+
+

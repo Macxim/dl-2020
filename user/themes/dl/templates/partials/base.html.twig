@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}">
+<head>
+{% block head %}
+  <meta charset="utf-8" />
+  <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% include 'partials/metadata.html.twig' %}
+
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url('theme://images/favicon-32x32.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url('theme://images/favicon-16x16.png') }}">
+
+  <link rel="canonical" href="{{ page.url(true, true) }}" />
+{% endblock head%}
+
+{% block stylesheets %}
+  {% do assets.addCss('theme://css/styles.css', 100) %}
+{% endblock %}
+
+{% block javascripts %}
+  {# {% do assets.addJs('jquery', 100) %} #}
+{% endblock %}
+
+{% block assets deferred %}
+  {{ assets.css()|raw }}
+  {{ assets.js()|raw }}
+{% endblock %}
+</head>
+<body class="{{ page.header.body_classes }}">
+
+{% block header %}
+  <header class="header">
+    <a class="logo-wrapper" href="{{ home_url }}">
+      {% include 'partials/_logo.svg' %}
+      <span class="sr-only">{{ config.site.title }}</span>
+      <div class="logo-label">denis<br/>lefèvre</div>
+    </a>
+    {% block header_navigation %}
+      <nav class="main-nav">
+        {% include 'partials/navigation.html.twig' %}
+      </nav>
+    {% endblock %}
+  </header>
+{% endblock %}
+
+{% block body %}
+  <section id="body">
+    <div>
+      {% block content %}{% endblock %}
+    </div>
+  </section>
+{% endblock %}
+
+{% block footer %}
+  <footer class="footer">
+    <ul class="social">
+      {% for social in site.social %}
+        <li class="social-item"><a class="social-link" href="{{ social.url }}" title="{{ social.title }}" target="_blank">{{ social.text }}</a></li>
+      {% endfor %}
+    </ul>
+
+    <div class="footer-work-status">
+      <a class="footer-work-status-link" href="mailto:{{site.author.email}}">
+        <span class="footer-work-status-label">
+          I am<br/>
+          available<br/>
+          for work.
+        </span>
+        {% include 'partials/_contact-arrow.svg' %}
+      </a>
+    </div>
+  </footer>
+{% endblock %}
+
+{% block bottom %}
+  {{ assets.js('bottom')|raw }}
+{% endblock %}
+
+</body>
+</html>

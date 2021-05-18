@@ -1,0 +1,30 @@
+title: 'Denis Lefèvre • UI/UX Designer'
+default_lang: en
+author:
+  name: 'Denis Lefèvre'
+  email: hello@denislefevre.com
+taxonomies:
+  - category
+  - tag
+metadata:
+  description: 'Personal website of Denis Lefèvre - Designer'
+summary:
+  enabled: true
+  format: short
+  size: 300
+  delimiter: '==='
+blog:
+  route: /blog
+social:
+  twitter:
+    text: Tw
+    title: Twitter
+    url: 'https://twitter.com/denisslef'
+  behance:
+    text: Be
+    title: Behance
+    url: 'https://www.behance.net/denislefevre'
+  linkedin:
+    text: In
+    title: LinkedIn
+    url: 'https://www.linkedin.com/in/denislefevre/'
